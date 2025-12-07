@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="network_logger_project">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/CICFlowMeter-4.0/network_logger_project.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
