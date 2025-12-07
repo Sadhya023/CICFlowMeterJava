@@ -254,6 +254,16 @@ def flush_buffer():
             logging.debug('Could not write last_sent_payload.json')
         r = requests.post(MODEL_URL, json=payload, timeout=10)
         logging.info('Model response: %s %s', r.status_code, (r.text[:500] if r.text else ''))
+        # Persist the remote model/webhook response for debugging (helpful when
+        # the remote inspector shows no requests). This file contains the
+        # status code and the start of the response body.
+        try:
+            with open('last_model_response.txt', 'w', encoding='utf-8') as fh:
+                fh.write(f"{r.status_code}\n")
+                if r.text:
+                    fh.write(r.text[:2000])
+        except Exception:
+            logging.debug('Could not write last_model_response.txt')
         # update sent counter
         _total_sent += len(payload['flows'])
         logging.info('Total flows forwarded so far: %d', _total_sent)

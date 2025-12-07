@@ -8,10 +8,6 @@ Follow the Quickstart below for a working setup on Linux or Windows.
 
 The CICFlowMeter is an open-source tool designed to generate Biflows from PCAP files and extract various features from these flows. It supports bidirectional flow generation, allowing for statistical time-related features to be calculated for both forward and backward directions. Key functionalities include feature selection, adding new features, and controlling flow timeout durations.
 
-For more details and citations, refer to the published papers:
-- Gerard Drapper Gil, Arash Habibi Lashkari, Mohammad Mamun, Ali A. Ghorbani, "Characterization of Encrypted and VPN Traffic Using Time-Related Features", In Proceedings of the 2nd International Conference on Information Systems Security and Privacy(ICISSP 2016) , pages 407-414, Rome , Italy
-- Arash Habibi Lashkari, Gerard Draper-Gil, Mohammad Saiful Islam Mamun and Ali A. Ghorbani, "Characterization of Tor Traffic Using Time Based Features", In the proceeding of the 3rd International Conference on Information System Security and Privacy, SCITEPRESS, Porto, Portugal, 2017
-
 ## Prerequisites
 
 The only prerequisite is the `libpcap` library (or WinPcap on Windows systems) to be pre-installed.
@@ -136,10 +132,6 @@ env WEBHOOK_URL="https://webhook.site/977e5fa2-20e0-4fdb-8b5c-d21a9ad7ac5e" ./CI
     chmod +x ./CICFlowMeter-4.0/bin/cfm
     ```
 -   **`UnsatisfiedLinkError`:** This usually indicates that the native `jnetpcap` libraries (`libjnetpcap.so` on Linux, `jnetpcap.dll` on Windows) cannot be found or loaded by the Java Virtual Machine. The `cfm` script is configured to set `java.library.path` to the correct native library directory (`CICFlowMeter-4.0/lib/native`). If you encounter this error, ensure your Java installation is compatible with the provided native libraries (e.g., 64-bit Java for 64-bit native libraries).
-
-## Contact
-
-Contact us at A.Habibi.L@unb.ca if there are any problems.
 
 ## Single-Command Wrapper (Adapter + CICFlowMeter)
 
